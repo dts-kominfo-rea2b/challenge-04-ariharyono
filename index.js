@@ -8,7 +8,21 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (data, index = undefined) => {
+  
+  let waktu = []
+
+  for (let dataWaktu of data) {
+    
+    waktu.push(Math.floor(Date.parse(dataWaktu) / 1000).toString())
+
+  }
+
+  return (index === undefined) ? waktu.sort((a,b) => (a-b)).join('-') : waktu[index]
+
+};
+
+
 
 // ! JANGAN DIMODIFIKASI
 (() => {
